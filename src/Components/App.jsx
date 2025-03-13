@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 import '../Styles/PokemonData.css';
 import PokemonContainer from "./PokemonGrid";
+import ScoreBoard from "./ScoreBoard";
 
 
 function App() {
@@ -9,6 +10,12 @@ function App() {
   const [score, setScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
   const [clickedPokemon, setClickedPokemon] = useState(new Set());
+
+  function resetScores () {
+    setScore(0);
+    setBestScore(0);
+    setClickedPokemon(new Set());
+  }
     
   useEffect(() => {
       const fetchImages = async () => {
@@ -50,17 +57,21 @@ function App() {
           setClickedPokemon(new Set());
         }
         else {
-          setScore((prev) => prev + 1);
-          setClickedPokemon((prev) => new Set([...prev, id]));
-          if (score + 1 > bestScore) {
-            setBestScore(score + 1);
-          }
+          setScore((prev) => {
+            const newScore = prev + 1;
+            setBestScore((prevBest) => Math.max(prevBest, newScore));
+            return newScore;
+          });
+
+          setClickedPokemon((prev) => new Set([...prev, id])); 
         }
+
         setPokemon(shuffleArray([...pokemon]));
       };
 
   return (
     <>
+    <ScoreBoard score={score} bestScore={bestScore} resetScores={resetScores}/>
       <PokemonContainer pokemon={pokemon} handleClick={handleClick} />
     </>
   )
