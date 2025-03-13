@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 
-import FetchPokemons from "./PokemonCard";
 import '../Styles/PokemonData.css';
+import PokemonContainer from "./PokemonGrid";
 
 
 function App() {
   const [pokemon, setPokemon] = useState([]);
   const [score, setScore] = useState(0);
-  const [bestScore, SetBestScore] = useState(0);
+  const [bestScore, setBestScore] = useState(0);
   const [clickedPokemon, setClickedPokemon] = useState(new Set());
     
   useEffect(() => {
@@ -37,9 +37,31 @@ function App() {
           fetchImages();
       }, []);
 
+      // to shuffle cards when card is clicled.
+      const shuffleArray = (array) => {
+        return array.sort(() => Math.random() - 0.5);
+      };
+
+      // handle scores when card is clicked.
+      function handleClick (id) {
+        // if pokemon is clicked twice.
+        if (clickedPokemon.has(id)) {
+          setScore(0);
+          setClickedPokemon(new Set());
+        }
+        else {
+          setScore((prev) => prev + 1);
+          setClickedPokemon((prev) => new Set([...prev, id]));
+          if (score + 1 > bestScore) {
+            setBestScore(score + 1);
+          }
+        }
+        setPokemon(shuffleArray([...pokemon]));
+      };
+
   return (
     <>
-      <FetchPokemons />
+      <PokemonContainer pokemon={pokemon} handleClick={handleClick} />
     </>
   )
 }
