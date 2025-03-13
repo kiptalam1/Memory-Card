@@ -1,0 +1,37 @@
+.score-board {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: calc(var(--margin) * 2.5);
+    margin: calc(var(--margin) * 2.5) auto;
+    margin-bottom: 0;
+    padding: var(--margin);
+    border: 1px solid var(--electric-blue);
+    border-radius: var(--padding);
+    
+}
+.score, .best-score {
+    font-size: var(--margin);
+    font-weight: 600;
+    font-style: oblique;
+    color: #1E90FF;
+    border-radius: var(--padding);
+    padding: 0 var(--padding);
+}
+.score-board button {
+    background-color: inherit;
+    color: var(--electric-blue);
+    width: calc(var(--margin) * 4);
+    border: 1px solid var(--electric-blue);
+    border-radius: var(--padding);
+    padding: calc(var(--padding) / 2);
+    font-size: var(--margin);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.score-board button:hover {
+    color: var(--crimson-red);
+    border: 1px solid #c62b4a;
+    box-shadow: 0 0 15px 1px #c62b4a; 
+
+}
