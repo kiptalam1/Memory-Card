@@ -1,0 +1,33 @@
+.pokemon-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: calc(var(--margin) * 2.5) 0;
+    max-width: 1000px;
+    min-width: 200px;
+    gap: var(--margin);
+    /* border: 1px solid white; */
+}
+.pokemon-container .pokemon {
+    height: calc(var(--margin) * 10);
+    width: calc(var(--margin) * 10);
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding);
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--gold);
+    border-radius: var(--padding);
+    transition: box-shadow 0.3s ease-in-out;
+}
+.pokemon-container .pokemon:hover {
+    box-shadow: 0 0 15px 1px rgba(255, 217, 0, 0.5); /* Glowing gold effect */
+}
+.pokemon img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    cursor: pointer;
+
+}
