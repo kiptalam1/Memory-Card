@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
 import '../Styles/PokemonData.css';
+import '../Styles/ScoreBoard.css';
 import PokemonContainer from "./PokemonGrid";
 import ScoreBoard from "./ScoreBoard";
 
@@ -71,7 +72,14 @@ function App() {
 
   return (
     <>
-    <ScoreBoard score={score} bestScore={bestScore} resetScores={resetScores}/>
+      <h1 style={
+          {margin: "20px auto", 
+            textAlign: "center", 
+            color: "#1E90FF",
+          marginBottom: "0"}
+          }>Memory Card
+        </h1>
+      <ScoreBoard score={score} bestScore={bestScore} resetScores={resetScores}/>
       <PokemonContainer pokemon={pokemon} handleClick={handleClick} />
     </>
   )
