@@ -2,10 +2,12 @@ import PokemonCard from "./PokemonCard";
 
 export default function PokemonContainer ({pokemon, handleClick}) {
     return (
-        <div className="pokemon-container">
-            {pokemon.map((poke) => (
-                <PokemonCard key={poke.id} poke={poke} handleClick={handleClick}/>
-            ))}
+        <div className="child">
+            <div className="pokemon-container">
+                {pokemon.map((poke) => (
+                    <PokemonCard key={poke.id} poke={poke} handleClick={handleClick}/>
+                ))}
+            </div>
         </div>
     )
 }
