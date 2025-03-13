@@ -1,4 +1,4 @@
-import PokemonCard from "./PokemonCard";
+import PokemonCard from "./PokemonCard.jsx";
 
 export default function PokemonContainer ({pokemon, handleClick}) {
     return (

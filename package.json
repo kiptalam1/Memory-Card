@@ -1,5 +1,5 @@
 {
-  "name": "package",
+  "name": "memory-card",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,6 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
+  "homepage": "https://kiptalam1.github.io/Memory-Card/",
   "dependencies": {
     "react": "^19.0.0",
     "react-dom": "^19.0.0"

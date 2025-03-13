@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 
 import '../Styles/PokemonData.css';
 import '../Styles/ScoreBoard.css';
-import PokemonContainer from "./PokemonGrid";
-import ScoreBoard from "./ScoreBoard";
+import PokemonContainer from "./PokemonGrid.jsx";
+import ScoreBoard from "./ScoreBoard.jsx";
 
 
 function App() {
