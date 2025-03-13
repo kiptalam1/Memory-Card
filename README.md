@@ -6,6 +6,7 @@
 3. how to get the images from an API. 
 
 4. Your application should include:
+
     i. a scoreboard, which counts
         - the current score, and 
         - a “Best Score”, which shows the highest score you’ve achieved thus far. 
