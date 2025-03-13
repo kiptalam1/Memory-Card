@@ -45,11 +45,12 @@ function App() {
           fetchImages();
       }, []);
 
-      // to shuffle cards when card is clicled.
+      // to shuffle cards when card is clicked.
       const shuffleArray = (array) => {
-        return array.sort(() => Math.random() - 0.5);
+        return [...array].sort(() => Math.random() - 0.5);
       };
-
+      
+      if (!pokemon.length) return <p>Loading...</p>;
       // handle scores when card is clicked.
       function handleClick (id) {
         // if pokemon is clicked twice.
@@ -67,7 +68,7 @@ function App() {
           setClickedPokemon((prev) => new Set([...prev, id])); 
         }
 
-        setPokemon(shuffleArray([...pokemon]));
+        setPokemon(shuffleArray(pokemon));
       };
 
   return (
