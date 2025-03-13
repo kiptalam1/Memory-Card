@@ -9,7 +9,7 @@
     gap: var(--margin);
     /* border: 1px solid white; */
 }
-.pokemon-container .pokemon {
+.pokemon-card {
     height: calc(var(--margin) * 10);
     width: calc(var(--margin) * 10);
     display: flex;
@@ -21,10 +21,10 @@
     border-radius: var(--padding);
     transition: box-shadow 0.3s ease-in-out;
 }
-.pokemon-container .pokemon:hover {
+.pokemon-card:hover {
     box-shadow: 0 0 15px 1px rgba(255, 217, 0, 0.5); /* Glowing gold effect */
 }
-.pokemon img {
+.pokemon-card img {
     width: 150px;
     height: 150px;
     object-fit: cover;
