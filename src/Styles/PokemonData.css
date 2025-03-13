@@ -3,11 +3,10 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin: calc(var(--margin) * 2.5) 0;
+    margin: calc(var(--margin) * 2) 0;
     max-width: 1000px;
     min-width: 200px;
     gap: var(--margin);
-    /* border: 1px solid white; */
 }
 .pokemon-card {
     height: calc(var(--margin) * 10);
@@ -29,5 +28,4 @@
     height: 150px;
     object-fit: cover;
     cursor: pointer;
-
 }
