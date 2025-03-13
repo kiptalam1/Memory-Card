@@ -11,6 +11,8 @@
 .pokemon-card {
     height: calc(var(--margin) * 10);
     width: calc(var(--margin) * 10);
+    color: var(--gold);
+    font-size: 12px;
     display: flex;
     flex-direction: column;
     gap: var(--padding);
